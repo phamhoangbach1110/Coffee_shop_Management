@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-//This is new
 namespace Coffee_shop_Manager
 {
     public partial class Form1 : Form
