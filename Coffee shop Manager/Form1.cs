@@ -473,6 +473,7 @@ namespace Coffee_shop_Manager
         private void Form1_Load(object sender, EventArgs e)
         {
             btnThanhToan.Hide();
+            LoadTableList();
         }
 
         private void LoadDataGridView(string soBan)
@@ -545,23 +546,61 @@ namespace Coffee_shop_Manager
 
         private void LoadTableList()
         {
-            using (conn = new SqlConnection(chuoiketnoi))
+            try
             {
-                string sqlTable = @"SELECT * FROM Tables";
-                SqlCommand cmdTable = new SqlCommand(sqlTable, conn);
-
-                conn.Open();
-                SqlDataReader reader = cmdTable.ExecuteReader();            //Đọc dữ liệu từ bảng Tables
-                conn.Close();
-
-                Dictionary<int, string> listTableStatus = new Dictionary<int, string>();    //Tạo một Dictionary lưu dữ liệu từ bảng
-
-                while (reader.Read())
+                using (conn = new SqlConnection(chuoiketnoi))
                 {
-                    int soBan = Convert.ToInt32(reader["TableNumber"]);         //Lấy số bàn
-                    string trangThai = reader["TableStatus"].ToString();        //Lấy trạng thái bàn đó
-                    listTableStatus.Add(soBan, trangThai);                      //Add vào Dictionary
+                    string sqlTable = @"SELECT * FROM Tables";
+                    SqlCommand cmdTable = new SqlCommand(sqlTable, conn);
+
+                    conn.Open();
+                    SqlDataReader reader = cmdTable.ExecuteReader();            //Đọc dữ liệu từ bảng Tables
+
+                    Dictionary<int, string> listTableStatus = new Dictionary<int, string>();    //Tạo một Dictionary lưu dữ liệu từ bảng
+
+                    while (reader.Read())
+                    {
+                        int soBan = Convert.ToInt32(reader["TableNumber"]);         //Lấy số bàn
+                        string trangThai = reader["TableStatus"].ToString();        //Lấy trạng thái bàn đó
+                        listTableStatus.Add(soBan, trangThai);                      //Add vào Dictionary
+                    }
+                    conn.Close();
+
+                    foreach (Button table in tlpTableList.Controls)
+                    {
+                        string tenBan = table.Text;
+                        int soBan = (tenBan == "Mang về") ? 0 : Convert.ToInt32(tenBan.Substring(tenBan.Length - 2, 2));    //Lấy số bàn
+
+                        if (listTableStatus.ContainsKey(soBan))
+                        {
+                            string trangThai = listTableStatus[soBan];          //Lấy trạng thái bàn
+
+                            //Đổi màu
+                            if (trangThai == "Trống")
+                            {
+                                table.BackColor = Color.DarkGreen;
+                                table.ForeColor = Color.FromArgb(192, 255, 192);
+                                table.Enabled = true;
+                            }
+                            else if (trangThai == "Đang dùng")
+                            {
+                                table.BackColor = Color.DarkOrange;
+                                table.ForeColor = Color.FromArgb(192, 255, 192);
+                                table.Enabled = true;
+                            }
+                            else
+                            {
+                                table.BackColor = Color.Gray;
+                                table.ForeColor = Color.White;
+                                table.Enabled = false;
+                            }
+                        }
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
     }
