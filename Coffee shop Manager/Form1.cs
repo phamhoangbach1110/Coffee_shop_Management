@@ -549,6 +549,19 @@ namespace Coffee_shop_Manager
             {
                 string sqlTable = @"SELECT * FROM Tables";
                 SqlCommand cmdTable = new SqlCommand(sqlTable, conn);
+
+                conn.Open();
+                SqlDataReader reader = cmdTable.ExecuteReader();            //Đọc dữ liệu từ bảng Tables
+                conn.Close();
+
+                Dictionary<int, string> listTableStatus = new Dictionary<int, string>();    //Tạo một Dictionary lưu dữ liệu từ bảng
+
+                while (reader.Read())
+                {
+                    int soBan = Convert.ToInt32(reader["TableNumber"]);         //Lấy số bàn
+                    string trangThai = reader["TableStatus"].ToString();        //Lấy trạng thái bàn đó
+                    listTableStatus.Add(soBan, trangThai);                      //Add vào Dictionary
+                }
             }
         }
     }
