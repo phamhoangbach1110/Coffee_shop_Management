@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+//This is new
 namespace Coffee_shop_Manager
 {
     public partial class Form1 : Form
@@ -481,7 +482,7 @@ namespace Coffee_shop_Manager
                 using (conn = new SqlConnection(chuoiketnoi))
                 {
                     //Đổ dữ liệu lên bảng tương ứng với bàn được chọn
-                    string sql = @"SELECT mn.ItemName AS 'Tên Món', od.QuanTity AS 'Số lượng', (od.UnitPrice * od.QuanTity) AS 'Giá'
+                    string sql = @"SELECT mn.ItemName AS 'Món', od.QuanTity AS 'Số lượng', (od.UnitPrice * od.QuanTity) AS 'Giá'
                                    FROM OrderDetails AS od
                                    INNER JOIN Menu AS mn ON mn.MenuItemID = od.MenuItemID
                                    INNER JOIN Orders AS o ON o.OrderID = od.OrderID
@@ -539,6 +540,15 @@ namespace Coffee_shop_Manager
                 conn.Open();
                 cmdStatusTable.ExecuteNonQuery();
                 conn.Close();
+            }
+        }
+
+        private void LoadTableList()
+        {
+            using (conn = new SqlConnection(chuoiketnoi))
+            {
+                string sqlTable = @"SELECT * FROM Tables";
+                SqlCommand cmdTable = new SqlCommand(sqlTable, conn);
             }
         }
     }
