@@ -212,6 +212,8 @@ namespace Coffee_shop_Manager
                         cmdCancelOrder.ExecuteNonQuery();
                         conn.Close();
 
+                        LoadTableStatusFree(soBan);
+
                         LoadDataGridView(soBan);
                     }
 
@@ -240,6 +242,11 @@ namespace Coffee_shop_Manager
                     lblStatusTag.BackColor = Color.DarkOrange;
                     lblStatusTag.Text = "Đang dùng";
                     btnThanhToan.Show();
+
+                    string tenBan = btn.Text;
+                    string soBan = (tenBan == "Mang về") ? "00" : tenBan.Substring(tenBan.Length - 2, 2);
+                    LoadTableStatusInUse(soBan);
+
                     return;
                 }
             }
@@ -276,6 +283,8 @@ namespace Coffee_shop_Manager
                         conn.Open();
                         cmdCancelOrder.ExecuteNonQuery();
                         conn.Close();
+
+                        LoadTableStatusFree(soBan);
 
                         LoadDataGridView(soBan);
                     }
@@ -344,9 +353,13 @@ namespace Coffee_shop_Manager
                         conn.Open();
                         maDon = Convert.ToInt32(cmdInsertOrder.ExecuteScalar());
                         conn.Close();
-                    } else
+                    }
+                    else
+                    {
                         //Lấy mã id của đơn đang xét
                         maDon = Convert.ToInt32(check);
+                    }
+
 
                     //BƯỚC 2: Bảng OrderDetails
                     //Kiểm tra xem trong orderdetails, orderID = x đã tồn tại món đã chọn chưa
@@ -438,7 +451,7 @@ namespace Coffee_shop_Manager
                     object TotalPrice = cmdGetTotalPrice.ExecuteScalar();
                     conn.Close();
 
-                    if (TotalPrice != null)
+                    if (TotalPrice != null && TotalPrice != DBNull.Value)
                         tongGia = Convert.ToInt32(TotalPrice);
 
                     //Cập nhật tổng giá vào bảng Orders
@@ -468,11 +481,11 @@ namespace Coffee_shop_Manager
                 using (conn = new SqlConnection(chuoiketnoi))
                 {
                     //Đổ dữ liệu lên bảng tương ứng với bàn được chọn
-                    string sql = @"SELECT mn.ItemName AS 'Món', od.QuanTity AS 'Số lượng', (od.UnitPrice * od.QuanTity) AS 'Giá'
-                               FROM OrderDetails AS od
-                               INNER JOIN Menu AS mn ON mn.MenuItemID = od.MenuItemID
-                               INNER JOIN Orders AS o ON o.OrderID = od.OrderID
-                               WHERE o.TableNumber = @tableNumber AND o.OrderStatus = N'Đang phục vụ';";
+                    string sql = @"SELECT mn.ItemName AS 'Tên Món', od.QuanTity AS 'Số lượng', (od.UnitPrice * od.QuanTity) AS 'Giá'
+                                   FROM OrderDetails AS od
+                                   INNER JOIN Menu AS mn ON mn.MenuItemID = od.MenuItemID
+                                   INNER JOIN Orders AS o ON o.OrderID = od.OrderID
+                                   WHERE o.TableNumber = @tableNumber AND o.OrderStatus = N'Đang phục vụ';";
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@tableNumber", soBan);

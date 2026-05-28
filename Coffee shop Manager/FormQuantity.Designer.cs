@@ -38,11 +38,11 @@
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.btnIncrease = new System.Windows.Forms.Button();
             this.btnDecrease = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSetQuantity = new System.Windows.Forms.Panel();
             this.btnResetQuantity = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblSoBan = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pnlSetQuantity.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -165,16 +165,16 @@
             this.btnDecrease.UseVisualStyleBackColor = true;
             this.btnDecrease.Click += new System.EventHandler(this.btnDecrease_Click);
             // 
-            // panel1
+            // pnlSetQuantity
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.btnIncrease);
-            this.panel1.Controls.Add(this.txtQuantity);
-            this.panel1.Controls.Add(this.btnDecrease);
-            this.panel1.Location = new System.Drawing.Point(118, 120);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(414, 73);
-            this.panel1.TabIndex = 11;
+            this.pnlSetQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlSetQuantity.Controls.Add(this.btnIncrease);
+            this.pnlSetQuantity.Controls.Add(this.txtQuantity);
+            this.pnlSetQuantity.Controls.Add(this.btnDecrease);
+            this.pnlSetQuantity.Location = new System.Drawing.Point(118, 120);
+            this.pnlSetQuantity.Name = "pnlSetQuantity";
+            this.pnlSetQuantity.Size = new System.Drawing.Size(414, 73);
+            this.pnlSetQuantity.TabIndex = 11;
             // 
             // btnResetQuantity
             // 
@@ -220,7 +220,7 @@
             this.Controls.Add(this.lblSoBan);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnResetQuantity);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSetQuantity);
             this.Controls.Add(this.lblDonGia);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblTenMon);
@@ -232,8 +232,8 @@
             this.Name = "FormQuantity";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập số lượng món";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlSetQuantity.ResumeLayout(false);
+            this.pnlSetQuantity.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,7 +251,7 @@
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Button btnIncrease;
         private System.Windows.Forms.Button btnDecrease;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlSetQuantity;
         private System.Windows.Forms.Button btnResetQuantity;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblSoBan;

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -161,7 +161,7 @@
             this.tlpTableList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpTableList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpTableList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpTableList.Size = new System.Drawing.Size(616, 401);
+            this.tlpTableList.Size = new System.Drawing.Size(616, 397);
             this.tlpTableList.TabIndex = 4;
             // 
             // btnMangVe
@@ -173,7 +173,7 @@
             this.btnMangVe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMangVe.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMangVe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnMangVe.Location = new System.Drawing.Point(3, 323);
+            this.btnMangVe.Location = new System.Drawing.Point(3, 319);
             this.btnMangVe.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnMangVe.Name = "btnMangVe";
             this.btnMangVe.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -192,10 +192,10 @@
             this.btnBan12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBan12.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBan12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBan12.Location = new System.Drawing.Point(413, 243);
+            this.btnBan12.Location = new System.Drawing.Point(413, 240);
             this.btnBan12.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnBan12.Name = "btnBan12";
-            this.btnBan12.Size = new System.Drawing.Size(193, 74);
+            this.btnBan12.Size = new System.Drawing.Size(193, 73);
             this.btnBan12.TabIndex = 17;
             this.btnBan12.Text = "Bàn 12";
             this.btnBan12.UseVisualStyleBackColor = false;
@@ -210,10 +210,10 @@
             this.btnBan11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBan11.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBan11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBan11.Location = new System.Drawing.Point(208, 243);
+            this.btnBan11.Location = new System.Drawing.Point(208, 240);
             this.btnBan11.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnBan11.Name = "btnBan11";
-            this.btnBan11.Size = new System.Drawing.Size(192, 74);
+            this.btnBan11.Size = new System.Drawing.Size(192, 73);
             this.btnBan11.TabIndex = 16;
             this.btnBan11.Text = "Bàn 11";
             this.btnBan11.UseVisualStyleBackColor = false;
@@ -228,10 +228,10 @@
             this.btnBan10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBan10.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBan10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBan10.Location = new System.Drawing.Point(3, 243);
+            this.btnBan10.Location = new System.Drawing.Point(3, 240);
             this.btnBan10.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnBan10.Name = "btnBan10";
-            this.btnBan10.Size = new System.Drawing.Size(192, 74);
+            this.btnBan10.Size = new System.Drawing.Size(192, 73);
             this.btnBan10.TabIndex = 15;
             this.btnBan10.Text = "Bàn 10";
             this.btnBan10.UseVisualStyleBackColor = false;
@@ -246,10 +246,10 @@
             this.btnBan9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBan9.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBan9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBan9.Location = new System.Drawing.Point(413, 163);
+            this.btnBan9.Location = new System.Drawing.Point(413, 161);
             this.btnBan9.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnBan9.Name = "btnBan9";
-            this.btnBan9.Size = new System.Drawing.Size(193, 74);
+            this.btnBan9.Size = new System.Drawing.Size(193, 73);
             this.btnBan9.TabIndex = 14;
             this.btnBan9.Text = "Bàn 09";
             this.btnBan9.UseVisualStyleBackColor = false;
@@ -264,10 +264,10 @@
             this.btnBan8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBan8.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBan8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBan8.Location = new System.Drawing.Point(208, 163);
+            this.btnBan8.Location = new System.Drawing.Point(208, 161);
             this.btnBan8.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnBan8.Name = "btnBan8";
-            this.btnBan8.Size = new System.Drawing.Size(192, 74);
+            this.btnBan8.Size = new System.Drawing.Size(192, 73);
             this.btnBan8.TabIndex = 13;
             this.btnBan8.Text = "Bàn 08";
             this.btnBan8.UseVisualStyleBackColor = false;
@@ -282,10 +282,10 @@
             this.btnBan7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBan7.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBan7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBan7.Location = new System.Drawing.Point(3, 163);
+            this.btnBan7.Location = new System.Drawing.Point(3, 161);
             this.btnBan7.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnBan7.Name = "btnBan7";
-            this.btnBan7.Size = new System.Drawing.Size(192, 74);
+            this.btnBan7.Size = new System.Drawing.Size(192, 73);
             this.btnBan7.TabIndex = 12;
             this.btnBan7.Text = "Bàn 07";
             this.btnBan7.UseVisualStyleBackColor = false;
@@ -300,10 +300,10 @@
             this.btnBan6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBan6.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBan6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBan6.Location = new System.Drawing.Point(413, 83);
+            this.btnBan6.Location = new System.Drawing.Point(413, 82);
             this.btnBan6.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnBan6.Name = "btnBan6";
-            this.btnBan6.Size = new System.Drawing.Size(193, 74);
+            this.btnBan6.Size = new System.Drawing.Size(193, 73);
             this.btnBan6.TabIndex = 10;
             this.btnBan6.Text = "Bàn 06";
             this.btnBan6.UseVisualStyleBackColor = false;
@@ -318,10 +318,10 @@
             this.btnBan5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBan5.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBan5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBan5.Location = new System.Drawing.Point(208, 83);
+            this.btnBan5.Location = new System.Drawing.Point(208, 82);
             this.btnBan5.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnBan5.Name = "btnBan5";
-            this.btnBan5.Size = new System.Drawing.Size(192, 74);
+            this.btnBan5.Size = new System.Drawing.Size(192, 73);
             this.btnBan5.TabIndex = 9;
             this.btnBan5.Text = "Bàn 05";
             this.btnBan5.UseVisualStyleBackColor = false;
@@ -336,10 +336,10 @@
             this.btnBan4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBan4.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBan4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnBan4.Location = new System.Drawing.Point(3, 83);
+            this.btnBan4.Location = new System.Drawing.Point(3, 82);
             this.btnBan4.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnBan4.Name = "btnBan4";
-            this.btnBan4.Size = new System.Drawing.Size(192, 74);
+            this.btnBan4.Size = new System.Drawing.Size(192, 73);
             this.btnBan4.TabIndex = 8;
             this.btnBan4.Text = "Bàn 04";
             this.btnBan4.UseVisualStyleBackColor = false;
@@ -357,7 +357,7 @@
             this.btnBan3.Location = new System.Drawing.Point(413, 3);
             this.btnBan3.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnBan3.Name = "btnBan3";
-            this.btnBan3.Size = new System.Drawing.Size(193, 74);
+            this.btnBan3.Size = new System.Drawing.Size(193, 73);
             this.btnBan3.TabIndex = 3;
             this.btnBan3.Text = "Bàn 03";
             this.btnBan3.UseVisualStyleBackColor = false;
@@ -375,7 +375,7 @@
             this.btnBan2.Location = new System.Drawing.Point(208, 3);
             this.btnBan2.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnBan2.Name = "btnBan2";
-            this.btnBan2.Size = new System.Drawing.Size(192, 74);
+            this.btnBan2.Size = new System.Drawing.Size(192, 73);
             this.btnBan2.TabIndex = 2;
             this.btnBan2.Text = "Bàn 02";
             this.btnBan2.UseVisualStyleBackColor = false;
@@ -393,7 +393,7 @@
             this.btnBan1.Location = new System.Drawing.Point(3, 3);
             this.btnBan1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.btnBan1.Name = "btnBan1";
-            this.btnBan1.Size = new System.Drawing.Size(192, 74);
+            this.btnBan1.Size = new System.Drawing.Size(192, 73);
             this.btnBan1.TabIndex = 1;
             this.btnBan1.Text = "Bàn 01";
             this.btnBan1.UseVisualStyleBackColor = false;
@@ -426,7 +426,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.flowLayoutPanel3);
-            this.panel2.Location = new System.Drawing.Point(19, 539);
+            this.panel2.Location = new System.Drawing.Point(19, 534);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(468, 34);
             this.panel2.TabIndex = 10;
@@ -448,7 +448,7 @@
             this.lblStatusTag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblStatusTag.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatusTag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lblStatusTag.Location = new System.Drawing.Point(351, 14);
+            this.lblStatusTag.Location = new System.Drawing.Point(342, 14);
             this.lblStatusTag.Name = "lblStatusTag";
             this.lblStatusTag.Size = new System.Drawing.Size(185, 34);
             this.lblStatusTag.TabIndex = 1;
@@ -497,7 +497,7 @@
             this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThanhToan.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btnThanhToan.Location = new System.Drawing.Point(64, 597);
+            this.btnThanhToan.Location = new System.Drawing.Point(58, 600);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnThanhToan.Size = new System.Drawing.Size(518, 86);
@@ -523,7 +523,7 @@
             this.tlpConfirm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.27273F));
             this.tlpConfirm.Controls.Add(this.btnCancel, 0, 0);
             this.tlpConfirm.Controls.Add(this.btnBookTable, 1, 0);
-            this.tlpConfirm.Location = new System.Drawing.Point(16, 28);
+            this.tlpConfirm.Location = new System.Drawing.Point(7, 28);
             this.tlpConfirm.Name = "tlpConfirm";
             this.tlpConfirm.RowCount = 1;
             this.tlpConfirm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -709,21 +709,21 @@
             this.dgvChosen.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvChosen.BackgroundColor = System.Drawing.Color.Lavender;
             this.dgvChosen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvChosen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChosen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvChosen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvChosen.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChosen.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvChosen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChosen.GridColor = System.Drawing.Color.Lavender;
             this.dgvChosen.Location = new System.Drawing.Point(0, 0);
