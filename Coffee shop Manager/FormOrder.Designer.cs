@@ -1,6 +1,6 @@
 ﻿namespace Coffee_shop_Manager
 {
-    partial class Form1
+    partial class FormOrder
     {
         /// <summary>
         /// Required designer variable.

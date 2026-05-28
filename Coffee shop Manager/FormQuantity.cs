@@ -18,11 +18,11 @@ namespace Coffee_shop_Manager
         }
 
         //Gọi Form1
-        private Form1 formChinh = null;
+        private FormOrder formChinh = null;
         private string monID = null;
 
         //Hiện thông tin tên món và giá món
-        public FormQuantity(string maMon, string tenMon, string giaMon, string soLuong, string soBan, Form1 f1)
+        public FormQuantity(string maMon, string tenMon, string giaMon, string soLuong, string soBan, FormOrder f1)
         {
             InitializeComponent();
             lblTenMon.Text = tenMon;
