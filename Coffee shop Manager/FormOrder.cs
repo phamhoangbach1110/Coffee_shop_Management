@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 //This is new
 namespace Coffee_shop_Manager
 {
-    public partial class Form1 : Form
+    public partial class FormOrder : Form
     {
         string chuoiketnoi = @"Data Source=MSI\SQLEXPRESS;Initial Catalog=Coffee Management;Integrated Security=True;TrustServerCertificate=True";
         SqlConnection conn = null;
@@ -109,7 +109,7 @@ namespace Coffee_shop_Manager
             f.ShowDialog();
         }
 
-        public Form1()
+        public FormOrder()
         {
             InitializeComponent();
         }
