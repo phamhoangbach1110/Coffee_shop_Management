@@ -17,16 +17,63 @@ namespace Coffee_shop_Manager
         string chuoiketnoi = @"Data Source=MSI\SQLEXPRESS;Initial Catalog=Coffee Management;Integrated Security=True;TrustServerCertificate=True";
         SqlConnection conn = null;
 
-        private void LoadMenu(string menuCategory)
+        //Danh mục
+        private void btnCaPhe_Click(object sender, EventArgs e)
+        {
+            //Chọn bàn trước
+            if (lblOrderTitle.Text == "Vui lòng chọn bàn")
+            {
+                MessageBox.Show("Vui lòng chọn bàn trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //HightLight nút danh mục đã chọn
+            foreach (Button btn in tlpCategory.Controls)
+            {
+                if (btn.ForeColor == Color.Lavender)
+                {
+                    btn.BackColor = Color.Lavender;
+                    btn.ForeColor = Color.FromArgb(255, 128, 0);
+                    break;
+                }
+            }
+            ((Button)sender).BackColor = Color.FromArgb(255, 128, 0);
+            ((Button)sender).ForeColor = Color.Lavender;
+
+            //Lấy tên danh mục đã chọn
+            string tenDanhMuc = ((Button)sender).Text;
+
+            //Lấy mã danh mục
+            using (conn = new SqlConnection(chuoiketnoi))
+            {
+                string sqlShowMenu = @"SELECT CategoryID
+                                       FROM DanhMuc
+                                       WHERE CategoryName = @CategoryName";
+                SqlCommand cmdShowMenu = new SqlCommand(sqlShowMenu, conn);
+                cmdShowMenu.Parameters.AddWithValue("@CategoryName", tenDanhMuc);
+
+                conn.Open();
+                object maDanhMuc = cmdShowMenu.ExecuteScalar();
+                conn.Close();
+
+                //Hiển thị tất cả các món có mã danh mục đã chọn
+                LoadMenu(maDanhMuc.ToString());
+            }
+        }
+
+        //Hiển thị danh sách món dựa vào danh mục đã chọn
+        private void LoadMenu(string maDanhMuc)
         {
             flpDanhSachMon.Controls.Clear();
             using (conn = new SqlConnection(chuoiketnoi))
             {
                 try
                 {
-                    string sql = "SELECT MenuItemID, ItemName, UnitPrice FROM Menu WHERE Category = @dm";
+                    string sql = @"SELECT MenuItemID, ItemName, UnitPrice 
+                                   FROM Menu 
+                                   WHERE CategoryID = @CategoryID";
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@dm", menuCategory);
+                    cmd.Parameters.AddWithValue("@CategoryID", maDanhMuc);
 
                     conn.Open();
                     SqlDataReader reader = cmd.ExecuteReader(); // Dùng Reader để đọc từng dòng tốc độ cao
@@ -42,13 +89,14 @@ namespace Coffee_shop_Manager
                         // Khởi tạo một đối tượng Button mới bằng code
                         Button btn = new Button();
                         btn.Text = $"{tenMon}\n{giaMon:N0}đ"; // Hiển thị Tên và Giá xuống dòng
-                        btn.Width = 160;                      // Định kích thước nút
+                        btn.Width = 130;                      // Định kích thước nút
                         btn.Height = 45;
-                        btn.FlatStyle = FlatStyle.Flat;       // Chỉnh style phẳng cho đẹp
-                        btn.FlatAppearance.BorderSize = 1;
+                        btn.FlatStyle = FlatStyle.Flat;       
+                        btn.FlatAppearance.BorderSize = 2;
                         btn.FlatAppearance.BorderColor = Color.Gray;
-                        btn.BackColor = Color.FromArgb(45, 45, 45); // Màu nền tối cho nút
-                        btn.ForeColor = Color.White;
+                        btn.BackColor = Color.FromArgb(255, 243, 205);
+                        btn.ForeColor = Color.FromArgb(92, 51, 23);
+                        btn.FlatAppearance.BorderColor = Color.FromArgb(120, 193, 123);
                         btn.Font = new Font("Times New Roman", 10);
                         btn.Cursor = Cursors.Hand;
 
@@ -61,7 +109,7 @@ namespace Coffee_shop_Manager
                         // Thả nút vừa tạo vào FlowLayoutPanel
                         flpDanhSachMon.Controls.Add(btn);
                     }
-                    reader.Close();
+                    conn.Close();
                 }
                 catch (Exception ex)
                 {
@@ -70,6 +118,7 @@ namespace Coffee_shop_Manager
             }
         }
 
+        //Chọn món
         private void BtnMonAn_Click(object sender, EventArgs e)
         {
             // Xác định chính xác nút bấm nào vừa được click
@@ -80,7 +129,7 @@ namespace Coffee_shop_Manager
             string giaMon = noiDungButton[1];               //Lấy giá món
 
             string tieuDe = lblOrderTitle.Text;             //Lấy tên tiêu đề
-            string soBan = (tieuDe.EndsWith("Mang về")) ? "00" : tieuDe.Substring(tieuDe.Length - 2, 2);
+            string soBan = (tieuDe.EndsWith("Mang về")) ? "00" : tieuDe.Substring(tieuDe.Length - 2, 2);    //Lấy số bàn
 
             string maMon = btn.Tag.ToString();
 
@@ -143,35 +192,12 @@ namespace Coffee_shop_Manager
                     break;
                 }
             }
-
             ((Button)sender).ForeColor = Color.Red;
 
             //Lấy dữ liệu
             string tenBan = ((Button)sender).Text;
             string soBan = (tenBan == "Mang về") ? "00" : tenBan.Substring(tenBan.Length - 2, 2);
             LoadDataGridView(soBan);
-        }
-
-        private void btnCaPhe_Click(object sender, EventArgs e)
-        {
-            //Chọn bàn trước
-            if (lblOrderTitle.Text == "Vui lòng chọn bàn")
-            {
-                MessageBox.Show("Vui lòng chọn bàn trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            //HightLight nút danh mục đã chọn
-            foreach (Button btn in tlpCategory.Controls)
-            {
-                btn.BackColor = Color.Lavender;
-                btn.ForeColor = Color.FromArgb(255, 128, 0);
-            }
-            ((Button)sender).BackColor = Color.FromArgb(255, 128, 0);
-            ((Button)sender).ForeColor = Color.Lavender;
-
-            //Truyền tên danh mục vào, lấy dữ liệu từ database
-            LoadMenu(((Button)sender).Text);
         }
 
         //Hủy
@@ -311,7 +337,7 @@ namespace Coffee_shop_Manager
         //TH2.2: Nêu số lượng = 0 -> xóa khỏi bảng OrderDetails
         //TH2.3: Nếu số lượng có giá trị thay đổi khác 0, -> cập nhật số lượng mới vào chính dòng có OrderID = x và MenuItemID đó
 
-        public void themVaoDanhSach(string maMon, string tenMon, string soLuong, string giaThanh, string soBan)
+        public void themVaoDanhSach(string maMon, string tenMon, string soLuong, string donGia, string giaThanh, string soBan)
         {
             int maDon = -1;
             //Thêm vào cơ sở dữ liệu
@@ -343,8 +369,8 @@ namespace Coffee_shop_Manager
 
                         //Hóa đơn
                         string sqlInsertOrder = @"INSERT INTO Orders (TableNumber, OrderTime, OrderStatus)
-                                                VALUES (@tablenumber, @orderdate, @status);
-                                                SELECT SCOPE_IDENTITY();";
+                                                  VALUES (@tablenumber, @orderdate, @status);
+                                                  SELECT SCOPE_IDENTITY();";
 
                         SqlCommand cmdInsertOrder = new SqlCommand(sqlInsertOrder, conn);
                         cmdInsertOrder.Parameters.AddWithValue("@tablenumber", soBan);
@@ -379,12 +405,9 @@ namespace Coffee_shop_Manager
                     //Nếu có rồi -> kiểm tra xem số lượng món đó có thay đổi không
                     if (detailCheck == null)
                     {
-                        //Tránh lỗi chia cho 0
+                        //Không thêm vào đơn nếu số lượng = 0
                         if (soLuong == "0")
                             return;
-
-                        //Tính đơn giá
-                        int donGia = Convert.ToInt32(giaThanh.Replace(",", "").Replace("đ", "")) / Convert.ToInt32(soLuong);
 
                         //Món chưa có trong bảng -> cập nhật thêm món mới
                         string sqlInsertDetail = @"INSERT INTO OrderDetails (OrderID, MenuItemID, Quantity, UnitPrice)
@@ -394,7 +417,7 @@ namespace Coffee_shop_Manager
                         cmdInsertDetail.Parameters.AddWithValue("OrderID", maDon);
                         cmdInsertDetail.Parameters.AddWithValue("MenuItemID", maMon);
                         cmdInsertDetail.Parameters.AddWithValue("Quantity", soLuong);
-                        cmdInsertDetail.Parameters.AddWithValue("UnitPrice", donGia);
+                        cmdInsertDetail.Parameters.AddWithValue("UnitPrice", donGia.Replace("đ", "").Replace(",", ""));
 
                         conn.Open();
                         cmdInsertDetail.ExecuteNonQuery();

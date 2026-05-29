@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,10 +68,10 @@
             this.btnCaPhe = new System.Windows.Forms.Button();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlChosen = new System.Windows.Forms.Panel();
             this.dgvChosen = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
             this.tlpTableList.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -494,6 +494,7 @@
             // 
             this.btnThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnThanhToan.BackColor = System.Drawing.Color.Red;
+            this.btnThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThanhToan.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToan.ForeColor = System.Drawing.Color.White;
@@ -571,7 +572,7 @@
             this.flpDanhSachMon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flpDanhSachMon.Location = new System.Drawing.Point(668, 154);
             this.flpDanhSachMon.Name = "flpDanhSachMon";
-            this.flpDanhSachMon.Size = new System.Drawing.Size(520, 164);
+            this.flpDanhSachMon.Size = new System.Drawing.Size(520, 186);
             this.flpDanhSachMon.TabIndex = 8;
             // 
             // tlpCategory
@@ -670,17 +671,6 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "Tổng cộng: ";
             // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(670, 343);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 33);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Đã chọn";
-            // 
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -705,26 +695,26 @@
             // 
             this.dgvChosen.AllowUserToAddRows = false;
             this.dgvChosen.AllowUserToDeleteRows = false;
+            this.dgvChosen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvChosen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChosen.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvChosen.BackgroundColor = System.Drawing.Color.Lavender;
             this.dgvChosen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvChosen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChosen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvChosen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvChosen.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvChosen.Dock = System.Windows.Forms.DockStyle.Fill;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChosen.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvChosen.GridColor = System.Drawing.Color.Lavender;
             this.dgvChosen.Location = new System.Drawing.Point(0, 0);
             this.dgvChosen.Name = "dgvChosen";
@@ -734,7 +724,18 @@
             this.dgvChosen.Size = new System.Drawing.Size(520, 147);
             this.dgvChosen.TabIndex = 0;
             // 
-            // Form1
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(670, 343);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 33);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Đã chọn";
+            // 
+            // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -749,7 +750,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
-            this.Name = "Form1";
+            this.Name = "FormOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caffee Manage";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -813,10 +814,10 @@
         private System.Windows.Forms.Button btnBookTable;
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Button btnMangVe;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Panel pnlChosen;
         private System.Windows.Forms.DataGridView dgvChosen;
+        private System.Windows.Forms.Label label4;
     }
 }
 

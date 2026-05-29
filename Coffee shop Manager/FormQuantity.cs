@@ -17,7 +17,7 @@ namespace Coffee_shop_Manager
             InitializeComponent();
         }
 
-        //Gọi Form1
+        //Gọi FormOrder
         private FormOrder formChinh = null;
         private string monID = null;
 
@@ -33,7 +33,7 @@ namespace Coffee_shop_Manager
             txtQuantity.Text = soLuong;
 
             //Ghi nhớ Form1 chuyển sang
-            this.formChinh = f1;
+            formChinh = f1;
 
             //Mã món
             monID = maMon;
@@ -112,13 +112,14 @@ namespace Coffee_shop_Manager
             string tenMon = lblTenMon.Text;
             string soLuong = txtQuantity.Text;
             string giaThanh = lblThanhTien.Text;
+            string donGia = lblDonGia.Text;
             string soBan = lblSoBan.Text;
             string maMon = monID;
 
             //Thêm vào danh sách
             if (formChinh != null)
             {
-                formChinh.themVaoDanhSach(maMon, tenMon, soLuong, giaThanh, soBan);
+                formChinh.themVaoDanhSach(maMon, tenMon, soLuong, donGia, giaThanh, soBan);
             }
 
             //Đóng form
